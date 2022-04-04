@@ -1,5 +1,5 @@
 var urlData = document.location.search;
-var userInput = $('#userInput').val();
+var userInput = $('#textarea1').val();
 var genreSearch; //= url split
 
 var apiUrl; //= url + genreSearch/genreId + albums
@@ -20,7 +20,6 @@ searchBtn.on("click", function(e) {
             displayGenre();
             
         })
-    )
     })
 
 function displayGenre() {
