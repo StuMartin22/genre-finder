@@ -35,6 +35,7 @@ searchBtn.on("click", function(e) {
 returnBtn.on("click", function(e){
     e.preventDefault();
     
+    
 })
 
 function displayGenre() {
