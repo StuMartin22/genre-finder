@@ -5,6 +5,7 @@ var genreSearch; //= url split
 
 var apiUrl; //= url + genreSearch/genreId + albums
 
+
 // initializes the form
 
      $('select').formSelect();
@@ -22,7 +23,7 @@ var timeDisplayE1 = $('#time-display');
 // when search is added on results html
 //var searchBtn = $('#search-btn');
 
-// searchBtn.on("click", function(e) {
+ //searchBtn.on("click", function(e) {
     //e.preventDefault();
     //var artist = ;
     //var album = ;
@@ -40,13 +41,12 @@ var timeDisplayE1 = $('#time-display');
 
 //function displayGenre() {
     // pull from api text and images to display in html
-    
-//}
 
 
-// local storage and search history function
-// var userInputArr=[];
-// var searchHis=localStorage.setItem(userInput)
+
+ // local storage and search history function
+
+
 
 // if(userInput){
 //     userCity.push(userInputArr);
