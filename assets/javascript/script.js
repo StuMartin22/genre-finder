@@ -1,35 +1,60 @@
 var urlData = document.location.search;
-//var userInput = $('#userInput').val();
+// var userInput = $('#userInput').val();
 var genreSearch; //= url split
 
 var apiUrl; //= url + genreSearch/genreId + albums
 
-// handle displaying the time
+// initializes the form
+// $(document).ready(function(){
+//     $('select').formSelect();
+// });
+
+//var instance = M.FormSelect.getInstance(elem);
+
+//var timeDisplayE1 = $('#time-display');
+// handle displaying the  time
 function displayTime() {
-    var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+    var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
     timeDisplayE1.text(rightNow);
 }
 
-// when search is added on results html
-var searchBtn = $('#search-btn');
 
-searchBtn.on("click", function(e) {
-    e.preventDefault();
+// when search is added on results html
+//var searchBtn = $('#search-btn');
+
+// searchBtn.on("click", function(e) {
+    //e.preventDefault();
     //var artist = ;
     //var album = ;
 
-    fetch(apiUrl)
-        .then(function(response) {
-            return response.json();
-        }
-        .then (function (data){
-            displayGenre();
+   // fetch(apiUrl)
+       // .then(function(response) {
+          //  return response.json();
+      //  }
+       // .then (function (data){
+         //   displayGenre();
             
-        })
-    )
-    })
+      //  })
+   // )
+  //  })
 
-function displayGenre() {
+//function displayGenre() {
     // pull from api text and images to display in html
     
-}
+//}
+
+
+// local storage and search history function
+// var userInputArr=[];
+// var searchHis=localStorage.setItem(userInput)
+
+// if(userInput){
+//     userCity.push(userInputArr);
+//     localStorage.setItem("cities", JSON.stringify(userCity));
+// } 
+// else{
+//     userInputArr.push(userCity);
+//     localStorage.setItem("cities", JSON.stringify(userInputArr));
+// }
+
+// console.log(userInputArr);
