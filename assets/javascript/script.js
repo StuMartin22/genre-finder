@@ -14,20 +14,21 @@ $(document).ready(function(){
     // when search is added on results html
     var searchBtn = $('#search-btn');
 
-    searchBtn.on("click", function(e) {
-        e.preventDefault();
-        // var artist = ;
-        // var album = ;
+searchBtn.on("click", function(event) {
+    event.preventDefault();
+    var newURL = apiUrl.split("tag=rock").join(userInput.val());
+    console.log(newURL);
+    //var artist = ;
+    //var album = ;
 
-        fetch(apiUrl)
-            .then(function(response) {
-                // return response.json();
-            }
-            .then (function (data){
-                displayGenre();
-                
-            })
-        )
+    fetch(apiUrl)
+        .then(function(response) {
+            return response.json();
+        }
+        .then (function (data){
+            console.log(data);
+            // displayGenre();
+            
         })
 
     function displayGenre() {
