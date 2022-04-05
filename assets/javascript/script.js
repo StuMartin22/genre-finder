@@ -1,6 +1,7 @@
 var urlData = document.location.search;
 var userInput = $('#userInput').val();
 var genreSearch; //= url split
+var returnBtn = $('#return-btn');
 
 var apiUrl; //= url + genreSearch/genreId + albums
 
@@ -22,6 +23,11 @@ searchBtn.on("click", function(e) {
         })
     )
     })
+
+returnBtn.on("click", function(e){
+    e.preventDefault();
+    
+})
 
 function displayGenre() {
     // pull from api text and images to display in html
