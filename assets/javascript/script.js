@@ -34,7 +34,8 @@ searchBtn.on("click", function(e) {
 returnBtn.on("click", function(e){
     e.preventDefault();
     
-    
+    // Do we want to use this instead of having it in the HTML?
+    //document.location.href = "./index.html";
 })
 
 function displayGenre() {
