@@ -1,5 +1,5 @@
 var urlData = document.location.search;
-// var userInput = $('#userInput').val();
+var userInput = $('#userInput').val();
 var genreSearch; //= url split
 
 var apiUrl; //= url + genreSearch/genreId + albums
@@ -9,7 +9,7 @@ var apiUrl; //= url + genreSearch/genreId + albums
 //     $('select').formSelect();
 // });
 
-var instance = M.FormSelect.getInstance(elem);
+// var instance = M.FormSelect.getInstance(elem);
 
 
 // when search is added on results html
