@@ -1,21 +1,34 @@
+
 $(document).ready(function(){
 var urlData = document.location.search;
 var userInput = $('.userInput');
 
-// var genreSearch; //= url split
+// part of initializing the jquery 
+$(document).ready(function(){
 
-// var apiUrl; //= url + genreSearch/genreId + albums
 
-var apiUrl = "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=rock&limit=10&api_key=38f325c730f4218c2247c79ff7fd0a85&format=json"
+    var urlData = document.location.search;
+    var userInput = $('#userInput').val();
+    var genreSearch; //= url split
+
+
 
 // initializes the form
-    $('select').formSelect();
 
-// var instance = M.FormSelect.getInstance(elem);
+     $('select').formSelect();
+
+
+//var instance = M.FormSelect.getInstance(elem);
+
+
+var timeDisplayE1 = $('#time-display');
+// handle displaying the  time
+    var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
+    timeDisplayE1.text(rightNow);
 
 
 // when search is added on results html
-var searchBtn = $('#search-btn');
+//var searchBtn = $('#search-btn');
 
 
 
@@ -59,19 +72,65 @@ searchBtn.on("click", function(event) {
 // }
 
 // console.log(userInputArr);
-// fetch(newURL)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log(data.results)
-//     });
-// localStorage.setItem("cityName", searchTerm.val());
-// // localStorage.getItem(searchTerm.val()); this also pulls it
-// // console.log(localStorage.getItem("cityName"));
-// var cityName = localStorage.getItem("cityName");
-// console.log(cityName);
-// var historyContainer = $(".historyContainer");
-// var searchHistory = $('<button>');
-// searchHistory.text(cityName);
-// historyContainer.append(searchHistory);
+});
+
+    var apiUrl; //= url + genreSearch/genreId + albums
+
+    // initializes the form
+    $('select').formSelect();
+
+
+    // when search is added on results html
+    var searchBtn = $('#search-btn');
+
+searchBtn.on("click", function(event) {
+    event.preventDefault();
+    var newURL = apiUrl.split("tag=rock").join(userInput.val());
+    console.log(newURL);
+    //var artist = ;
+    //var album = ;
+
+    fetch(apiUrl)
+        .then(function(response) {
+            return response.json();
+        }
+        .then (function (data){
+            console.log(data);
+            // displayGenre();
+            
+        })
+
+    function displayGenre() {
+        // pull from api text and images to display in html
+        
+    }
+
+    // local storage function
+    var genreArr=[];
+    var storage=localStorage.getItem("genreName");
+
+    if(userInput){
+        storage.push(userInput);
+        localStorage.setItem("genreName", userInput);
+    } else{
+        genreArr.push(userInput);
+        localStorage.setItem("genreName", userInput);
+    }
+
+    console.log (genreArr);
+
+
+    var scoreList=JSON.parse(localStorage.getItem("genreName"));
+
+    for(var i=0; i<scoreList.length; i++){
+        var listItem= $.create("li");
+        var list=$("#searchHis");
+        list.append(listItem);
+
+        listItem.textContent=scoreList[i].initials + "  -  " +scoreList[i].score;
+    };
+
+
+
+});
+
