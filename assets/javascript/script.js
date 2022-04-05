@@ -1,7 +1,12 @@
+// part of initializing the jquery 
 $(document).ready(function(){
     var urlData = document.location.search;
-    // var userInput = $('#userInput').val();
+    var userInput = $('#userInput').val();
     var genreSearch; //= url split
+
+     // initializes the form
+     $('select').formSelect();
+
     
     var apiUrl = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=" + genreSearch + "&limit=10&api_key=38f325c730f4218c2247c79ff7fd0a85&format=json";
     
@@ -16,6 +21,8 @@ $(document).ready(function(){
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
+        var newURL = apiUrl.split("tag=rock").join(userInput.val());
+        console.log(newURL);
     
         fetch(apiUrl)
             .then(function(response) {
@@ -39,8 +46,7 @@ $(document).ready(function(){
     
                     // in the documentation it shows a '#' before text, but this spits an error
                     // albumCoverEl.text(data.albums.album[i].image[1].#text);
-                    albumCardEl.append($('<img>', {id:'albumCover', src: data.albums.album[i].image[1].#text}
-                ));
+                    albumCardEl.append($('<img>', {id:'albumCover', src: data.albums.album[i].image[1].#text}));
                 }
     
             })
@@ -50,31 +56,31 @@ $(document).ready(function(){
 
         returnBtn.on("click", function(e){
             e.preventDefault();
-            
-            // Do we want to use this instead of having it in the HTML?
-            //document.location.href = "./index.html";
-        })
-    
-        function displayGenre() {
-            // pull from api text and images to display in html
-    
-        
         }
-    
-    
-    // local storage and search history function
-    // var userInputArr=[];
-    // var searchHis=localStorage.setItem(userInput)
-    
-    // if(userInput){
-    //     userCity.push(userInputArr);
-    //     localStorage.setItem("cities", JSON.stringify(userCity));
-    // } 
-    // else{
-    //     userInputArr.push(userCity);
-    //     localStorage.setItem("cities", JSON.stringify(userInputArr));
-    // }
-    
-    // console.log(userInputArr);
-    
-    });
+
+
+    // local storage function
+    var genreArr=[];
+    var storage=localStorage.getItem("genreName");
+
+    if(userInput){
+        storage.push(userInput);
+        localStorage.setItem("genreName", userInput);
+    } else{
+        genreArr.push(userInput);
+        localStorage.setItem("genreName", userInput);
+    }
+
+    console.log (genreArr);
+
+
+    var scoreList=JSON.parse(localStorage.getItem("genreName"));
+
+    for(var i=0; i<scoreList.length; i++){
+        var listItem= $.create("li");
+        var list=$("#searchHis");
+        list.append(listItem);
+
+        listItem.textContent=scoreList[i].initials + "  -  " +scoreList[i].score;
+    };
+});
