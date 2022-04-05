@@ -1,14 +1,30 @@
+
+$(document).ready(function(){
+var urlData = document.location.search;
+// var userInput = $('#userInput').val();
+var genreSearch; //= url split
+
 // part of initializing the jquery 
 $(document).ready(function(){
     var urlData = document.location.search;
     var userInput = $('#userInput').val();
     var genreSearch; //= url split
 
-     // initializes the form
+// initializes the form
+
      $('select').formSelect();
 
+
+//var instance = M.FormSelect.getInstance(elem);
+
+
+var timeDisplayE1 = $('#time-display');
+// handle displaying the  time
+    var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
+    timeDisplayE1.text(rightNow);
+
     
-    var apiUrl = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=" + genreSearch + "&limit=10&api_key=38f325c730f4218c2247c79ff7fd0a85&format=json";
+    var apiUrl = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=rock&limit=10&api_key=38f325c730f4218c2247c79ff7fd0a85&format=json";
     
     // initializes the form
         $('select').formSelect();
@@ -84,3 +100,4 @@ $(document).ready(function(){
         listItem.textContent=scoreList[i].initials + "  -  " +scoreList[i].score;
     };
 });
+
