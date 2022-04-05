@@ -1,6 +1,6 @@
 $(document).ready(function(){
 var urlData = document.location.search;
-// var userInput = $('#userInput').val();
+var userInput = $('#userInput').val();
 var genreSearch; //= url split
 
 var apiUrl; //= url + genreSearch/genreId + albums
@@ -14,8 +14,10 @@ var apiUrl; //= url + genreSearch/genreId + albums
 // when search is added on results html
 var searchBtn = $('#search-btn');
 
-searchBtn.on("click", function(e) {
-    e.preventDefault();
+searchBtn.on("click", function(event) {
+    event.preventDefault();
+    var newURL = apiUrl.split("tag=rock").join(userInput.val());
+    console.log(newURL);
     //var artist = ;
     //var album = ;
 
@@ -24,16 +26,17 @@ searchBtn.on("click", function(e) {
             return response.json();
         }
         .then (function (data){
-            displayGenre();
+            console.log(data);
+            // displayGenre();
             
         })
     )
     })
 
-function displayGenre() {
+// function displayGenre() {
     // pull from api text and images to display in html
     
-}
+
 
 
 // local storage and search history function
