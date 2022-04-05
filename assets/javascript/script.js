@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var urlData = document.location.search;
 // var userInput = $('#userInput').val();
 var genreSearch; //= url split
@@ -5,11 +6,9 @@ var genreSearch; //= url split
 var apiUrl; //= url + genreSearch/genreId + albums
 
 // initializes the form
-// $(document).ready(function(){
-//     $('select').formSelect();
-// });
+    $('select').formSelect();
 
-var instance = M.FormSelect.getInstance(elem);
+// var instance = M.FormSelect.getInstance(elem);
 
 
 // when search is added on results html
@@ -51,3 +50,5 @@ function displayGenre() {
 // }
 
 // console.log(userInputArr);
+
+});
