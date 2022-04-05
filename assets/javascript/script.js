@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var urlData = document.location.search;
 // var userInput = $('#userInput').val();
 var genreSearch; //= url split
@@ -5,18 +6,17 @@ var genreSearch; //= url split
 var apiUrl; //= url + genreSearch/genreId + albums
 
 // initializes the form
-// $(document).ready(function(){
-//     $('select').formSelect();
-// });
+
+     $('select').formSelect();
+
 
 //var instance = M.FormSelect.getInstance(elem);
 
-//var timeDisplayE1 = $('#time-display');
+
+var timeDisplayE1 = $('#time-display');
 // handle displaying the  time
-function displayTime() {
     var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
     timeDisplayE1.text(rightNow);
-}
 
 
 // when search is added on results html
@@ -58,3 +58,4 @@ function displayTime() {
 // }
 
 // console.log(userInputArr);
+});
