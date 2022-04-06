@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var urlData = document.location.search;
     var userInput = $('.userInput');
-    var urlData = document.location.search;
+    //var urlData = document.location.search;
     var genreSearch; //= url split
 
     // initializes the form
