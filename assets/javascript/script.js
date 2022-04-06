@@ -75,6 +75,7 @@ var timeDisplayE1 = $('#time-display');
 
 
     // local storage function
+
     var genreArr=[];
     var storage=localStorage.getItem("genreName");
 
@@ -99,4 +100,4 @@ var timeDisplayE1 = $('#time-display');
         listItem.textContent=scoreList[i].initials + "  -  " +scoreList[i].score;
     };
 });
-
+});
