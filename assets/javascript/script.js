@@ -4,8 +4,8 @@ $(document).ready(function(){
     // initializes the form
     $('select').formSelect();
 
-    var timeDisplayE1 = $('#time-display');
     // handle displaying the  time
+    var timeDisplayE1 = $('#time-display');
     var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
     timeDisplayE1.text(rightNow);
     
@@ -17,14 +17,14 @@ $(document).ready(function(){
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
-        
-        var userInput = $('.userInput').val();
-        console.log(userInput);
+        console.log("yes");
+        var userInput = $('#userInput').val();
+        console.log (userInput);
 
-        var newURL = apiUrl.split("tag=rock").join(userInput.val());
+        var newURL = apiUrl.split("tag=rock").join(userInput);
         console.log(newURL);
 
-        var secondUrl = artistUrl.split("tag=rock").join(userInput.val());  
+        var secondUrl = artistUrl.split("tag=rock").join(userInput);  
         
         // fetch(apiUrl)
         //     .then(function(response) {
@@ -62,22 +62,21 @@ $(document).ready(function(){
     //         localStorage.setItem("genreName", JSON.stringify(genreArr));
     //     }
         
-    //     // puts as list under search history
-    //     var listGen=JSON.parse(localStorage.getItem("genreName"));
-    //     console.log (listGen)
-    //     for(var i=0; i<listGen.length; i++){
-    //         var listItem= $('<li>');
-    //         var list=$("#searchHis");
-    //         list.append(listItem);
-    //         listItem.text(listGen[i]);
-    //     };  
-    // });
+        // puts as list under search history
+        var listGen=JSON.parse(localStorage.getItem("genreName"));
+        console.log (listGen)
+        for(var i=0; i<listGen.length; i++){
+            var listItem= $('<li>');
+            var list=$("#searchHis");
+            list.append(listItem);
+            listItem.text(listGen[i]);
+        };  
+     });
 
         
-    //     });                                                                    
+     });                                                                    
 
     //     returnBtn.on("click", function(e){
     //         e.preventDefault();
     // });
 
-})});
