@@ -11,10 +11,10 @@ $(document).ready(function(){
          $('select').formSelect();
     
     
-    // var timeDisplayE1 = $('#time-display');
+     var timeDisplayE1 = $('#time-display');
     // handle displaying the  time
-        // var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
-        // timeDisplayE1.text(rightNow);
+         var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
+         timeDisplayE1.text(rightNow);
     
         
         var apiUrl = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=rock&limit=10&api_key=38f325c730f4218c2247c79ff7fd0a85&format=json";
