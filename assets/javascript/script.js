@@ -58,7 +58,7 @@ var timeDisplayE1 = $('#time-display');
                     //albumCardEl.append($('<img>', {id:'albumCover', src: data.albums.album[i].image[1].#text}));
                 }
     
-            })
+        })
 
         // local storage functions, to store search history
         var genreArr=[];
@@ -67,7 +67,7 @@ var timeDisplayE1 = $('#time-display');
             storage.push(userInput);
             localStorage.setItem("genreName", JSON.stringify(storage));
         } else{
-            genreArr.push(userInput);
+        genreArr.push(userInput);
             localStorage.setItem("genreName", JSON.stringify(genreArr));
         }
         
