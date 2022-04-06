@@ -51,14 +51,14 @@ searchBtn.on("click", function(event) {
     console.log (genreArr);
 
 
-    var scoreList=JSON.parse(localStorage.getItem("genreName"));
+    var listGen=JSON.parse(localStorage.getItem("genreName"));
 
-    for(var i=0; i<scoreList.length; i++){
+    for(var i=0; i<listGen.length; i++){
         var listItem= $.create("li");
         var list=$("#searchHis");
         list.append(listItem);
 
-        listItem.textContent=scoreList[i].initials + "  -  " +scoreList[i].score;
+        listItem.textContent=listGen[i];
     };
 
 
