@@ -31,7 +31,6 @@ $(document).ready(function(){
                 return response.json();
             })
             .then (function (data){
-                displayGenre();
     
                 for (var i = 0; i < data.albums; i++) {
                     let albumCardEl = document.createElement("div");
@@ -112,4 +111,3 @@ $(document).ready(function(){
     // });
 
 });
-})
