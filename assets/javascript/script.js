@@ -1,7 +1,11 @@
 $(document).ready(function(){
     var urlData = document.location.search;
+<<<<<<< HEAD
     var userInput = $('.userInput');
     //var urlData = document.location.search;
+=======
+    var urlData = document.location.search;
+>>>>>>> main
     var genreSearch; //= url split
 
     // initializes the form
@@ -20,20 +24,20 @@ $(document).ready(function(){
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
-        
+        console.log("yes");
         var userInput = $('#userInput').val();
+        console.log (userInput);
 
-        var newURL = apiUrl.split("tag=rock").join(userInput.val());
+        var newURL = apiUrl.split("tag=rock").join(userInput);
         console.log(newURL);
 
-        var secondUrl = artistUrl.split("tag=rock").join(userInput.val());  
+        var secondUrl = artistUrl.split("tag=rock").join(userInput);  
         
         fetch(apiUrl)
             .then(function(response) {
                 return response.json();
             })
             .then (function (data){
-                displayGenre();
     
                 for (var i = 0; i < data.albums; i++) {
                     var albumCardEl = $();
@@ -73,10 +77,10 @@ $(document).ready(function(){
             list.append(listItem);
             listItem.text(listGen[i]);
         };  
-    });
+     });
 
         
-        });                                                                    
+     });                                                                    
 
     //     returnBtn.on("click", function(e){
     //         e.preventDefault();
