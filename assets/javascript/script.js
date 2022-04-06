@@ -1,9 +1,4 @@
 
-$(document).ready(function(){
-var urlData = document.location.search;
-// var userInput = $('#userInput').val();
-var genreSearch; //= url split
-
 // part of initializing the jquery 
 $(document).ready(function(){
     var urlData = document.location.search;
@@ -48,6 +43,7 @@ var timeDisplayE1 = $('#time-display');
                 displayGenre();
     
                 for (var i = 0; i < data.albums; i++) {
+                    // pull these locations from the HTML
                     var albumCardEl = $();
                     var albumNameEl = $();
                     var artistNameEl = $();
@@ -62,7 +58,7 @@ var timeDisplayE1 = $('#time-display');
     
                     // in the documentation it shows a '#' before text, but this spits an error
                     // albumCoverEl.text(data.albums.album[i].image[1].#text);
-                    albumCardEl.append($('<img>', {id:'albumCover', src: data.albums.album[i].image[1].#text}));
+                    // albumCardEl.append($('<img>', {id:'albumCover', src: data.albums.album[i].image[1].#text}));
                 }
     
             })
@@ -72,7 +68,7 @@ var timeDisplayE1 = $('#time-display');
 
         returnBtn.on("click", function(e){
             e.preventDefault();
-        }
+        })
 
 
     // local storage function
