@@ -25,12 +25,11 @@ $(document).ready(function(){
 
         var secondUrl = artistUrl.split("tag=rock").join(userInput);  
         
-        // fetch(apiUrl)
-        //     .then(function(response) {
-        //         return response.json();
-        //     })
-        //     .then (function (data){
-        //         displayGenre();
+        fetch(apiUrl)
+            .then(function(response) {
+                return response.json();
+            })
+            .then (function (data){
     
                 for (var i = 0; i < data.albums; i++) {
                     let albumCardEl = document.createElement("div");
