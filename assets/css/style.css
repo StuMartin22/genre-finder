@@ -1,8 +1,8 @@
-var (--darkRed, #7C0B2B);
-var (--lightRed, #FB4B4E);
-var (--lightGray, #D7D6D6);
-var (--black, #0F110C);
-var (--darkGray, #61707D);
+var {--darkRed, #7C0B2B};
+var {--lightRed, #FB4B4E};
+var {--lightGray, #D7D6D6};
+var {--black, #0F110C};
+var {--darkGray, #61707D};
 
 body {
     display: flex;
