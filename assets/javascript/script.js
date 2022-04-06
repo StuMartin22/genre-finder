@@ -16,6 +16,7 @@ $(document).ready(function(){
     var searchBtn = $('#search-btn');
     var artistCard = $('#artist-card');
     var albumCard = $('#album-card');
+
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
@@ -36,11 +37,15 @@ $(document).ready(function(){
                     let albumNameEl = document.createElement("p");
                     let artistNameEl = document.createElement("p");
                     // var albumCoverEl = $();
+                    let albumRank = $();
 
                     albumCard.append(albumCardEl);
                     
+                    // albumRank.text(data.albums.album[i].@attr.rank)
+
                     console.log(data.albums.album[i].name);
                     console.log(data.albums.album[i].artist.name);
+                    console.log(data.albums.album[i].image[1]["#text"]);
     
                     albumNameEl.text(data.albums.album[i].name);
                     albumCardEl.append(albumNameEl);
@@ -48,6 +53,7 @@ $(document).ready(function(){
                     artistNameEl.text(data.albums.album[i].artist.name);
                     albumCardEl.append(artistNameEl);
                     
+                    console.lo
                     // in the documentation it shows a '#' before text, but this spits an error
                     // albumCoverEl.text(data.albums.album[i].image[1].#text);
                     // albumCardEl.append($('<img>', {id:'album-cover', src: data.albums.album[i].image[1].#text}));
@@ -105,4 +111,3 @@ $(document).ready(function(){
     // });
 
 });
-
