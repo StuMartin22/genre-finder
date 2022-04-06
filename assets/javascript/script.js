@@ -1,7 +1,5 @@
 $(document).ready(function(){
     var urlData = document.location.search;
-    var urlData = document.location.search;
-    var genreSearch; //= url split
 
     // initializes the form
     $('select').formSelect();
@@ -27,11 +25,12 @@ $(document).ready(function(){
 
         var secondUrl = artistUrl.split("tag=rock").join(userInput);  
         
-        fetch(apiUrl)
-            .then(function(response) {
-                return response.json();
-            })
-            .then (function (data){
+        // fetch(apiUrl)
+        //     .then(function(response) {
+        //         return response.json();
+        //     })
+        //     .then (function (data){
+        //         displayGenre();
     
                 for (var i = 0; i < data.albums; i++) {
                     let albumCardEl = document.createElement("div");
