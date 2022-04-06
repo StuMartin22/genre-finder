@@ -14,6 +14,8 @@ $(document).ready(function(){
         
     // when search is added on results html
     var searchBtn = $('#search-btn');
+    var artistCard = $('#artist-card');
+    var albumCard = $('#album-card');
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
@@ -30,34 +32,61 @@ $(document).ready(function(){
         //     .then (function (data){
         //         displayGenre();
     
-        //         for (var i = 0; i < data.albums; i++) {
-        //             var albumCardEl = $();
-        //             var albumNameEl = $();
-        //             var artistNameEl = $();
-        //             var albumCoverEl = $();
+                for (var i = 0; i < data.albums; i++) {
+                    let albumCardEl = document.createElement("div");
+                    let albumNameEl = document.createElement("p");
+                    let artistNameEl = document.createElement("p");
+                    // var albumCoverEl = $();
+
+                    albumCard.append(albumCardEl);
+                    
+                    console.log(data.albums.album[i].name);
+                    console.log(data.albums.album[i].artist.name);
     
-    
-        //             albumNameEl.text(data.albums.album[i].name);
-        //             albumCardEl.append(albumNameEl);
-    
-        //             artistNameEl.text(data.albums.album[i].artist.name);
-        //             albumCardEl.append(artistNameEl);
-    
-        //             // in the documentation it shows a '#' before text, but this spits an error
-        //             // albumCoverEl.text(data.albums.album[i].image[1].#text);
-        //             // albumCardEl.append($('<img>', {id:'albumCover', src: data.albums.album[i].image[1].#text}));
-        //         };
+                    albumNameEl.text(data.albums.album[i].name);
+                    albumCardEl.append(albumNameEl);
+                    
+                    artistNameEl.text(data.albums.album[i].artist.name);
+                    albumCardEl.append(artistNameEl);
+                    
+                    // in the documentation it shows a '#' before text, but this spits an error
+                    // albumCoverEl.text(data.albums.album[i].image[1].#text);
+                    // albumCardEl.append($('<img>', {id:'album-cover', src: data.albums.album[i].image[1].#text}));
+                };
+
+                fetch(artistUrl)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then (function (data){
+        
+                    for (var i = 0; i < data.albums; i++) {
+                        let artistCardEl = document.createElement("div");
+                        let artistNameEl = document.createElement("p");
+                        // var artistImageEl = $();
+
+                        artistCard.append(artistCardEl);
+                        
+
+                        artistNameEl.text(data.topartists.artist[i].name);
+                        artistCardEl.append(albumNameEl);
+                        
+                        // not sure how we want to do this part yet
+                        // artistImageEl.text(data.topartists.artist[i].image[1].#text);
+                        // artistCardEl.append($('<img>', {id:'artist-image', src: data.topartists.artist[i].image[1].#text}));
+        
+                    };
     
         // local storage functions, to store search history
-    //     var genreArr=[];
-    //     var storage=JSON.parse(localStorage.getItem("genreName"));
-    //     if(storage){
-    //         storage.push(userInput);
-    //         localStorage.setItem("genreName", JSON.stringify(storage));
-    //     } else{
-    //         genreArr.push(userInput);
-    //         localStorage.setItem("genreName", JSON.stringify(genreArr));
-    //     }
+            var genreArr=[];
+            var storage=JSON.parse(localStorage.getItem("genreName"));
+            if(storage){
+                storage.push(userInput);
+                localStorage.setItem("genreName", JSON.stringify(storage));
+            } else{
+                genreArr.push(userInput);
+                localStorage.setItem("genreName", JSON.stringify(genreArr));
+            }
         
         // puts as list under search history
         var listGen=JSON.parse(localStorage.getItem("genreName"));
@@ -76,3 +105,5 @@ $(document).ready(function(){
     //         e.preventDefault();
     // });
 
+});
+});
