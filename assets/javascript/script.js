@@ -21,12 +21,9 @@ $(document).ready(function(){
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
-        console.log("yes");
         var userInput = $('#userInput').val();
-        console.log (userInput);
 
         var newURL = apiUrl.split("tag=rock").join(userInput);
-        console.log(newURL);
 
         var secondUrl = artistUrl.split("tag=rock").join(userInput);  
         
@@ -94,15 +91,14 @@ $(document).ready(function(){
         
         // puts as list under search history
         var listGen=JSON.parse(localStorage.getItem("genreName"));
-        console.log (listGen)
+        var list=$("#searchHis");
+        list.empty();
         for(var i=0; i<listGen.length; i++){
             var listItem= $('<li>');
-            var list=$("#searchHis");
-            list.append(listItem);
             listItem.text(listGen[i]);
+            list.append(listItem);
         };  
      });
-
         
      });                                                                    
 
