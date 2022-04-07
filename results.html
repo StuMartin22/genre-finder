@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/results.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -19,16 +19,16 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <a class="waves-effect waves-light btn" href="./index.html" id = "return-btn" >Return to Homepage</a>
           </ul>
+        </div> 
+    </nav>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a class="waves-effect waves-light" >Current Time &amp; Date : <span id="time-display"></span></a>
+          </ul>
         </div>
       </nav>
-
-    <header class="jumbotron jumbotron-fluid custom-jumbotron">
-        <div class="container text-center">
-            <h1>Genre Finder</h1>
-            <h2>Current Time &amp; Date : <br /> <span id="time-display"></span></h2>
-        </div>
-    </header>
-  
     <div class="container center-align">
         <div class="container center-align">
             <div class="row">
@@ -51,7 +51,7 @@
                       <div class="card" id="artist-card">
                         <div class="card-image">
                           <img>
-                          <span class="card-title">Card Title</span>
+                          <span class="card-title">Artists</span>
                         </div>
                         <div class="card-content">
                           <p>Top Artists</p>
@@ -62,13 +62,15 @@
                     </div>
                     </a>
                   </div>
-                  <div class="row">
-                      <a target="_blank" href="{{Link}}">
+        <div class="container center-align" id="album-card">
+             <div class="row center-align">
+                <div class="row">
+                    <a target="_blank" href="{{Link}}">
                     <div class="col s12 m7">
                       <div class="card" id="album-card">
                         <div class="card-image">
                           <img src="images/sample-1.jpg">
-                          <span class="card-title">Card Title</span>
+                          <span class="card-title">Albums</span>
                         </div>
                         <div class="card-content">
                           <p>Top Albums</p>
@@ -77,8 +79,10 @@
                         </div>
                       </div>
                     </div>
-                      </a>
+                    </a>
                   </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
