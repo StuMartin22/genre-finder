@@ -17,11 +17,24 @@ $(document).ready(function(){
     var artistCard = $('#artist-card');
     var albumCard = $('#album-card');
 
+    var userInput = $('#userInput').val();
+    console.log(userInput);
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
-        var userInput = $('#userInput').val();
+        window.location.href="./results.html";
 
+        getData();
+        localStorage();
+
+     });                                                                    
+
+    //     returnBtn.on("click", function(e){
+    //         e.preventDefault();
+
+    function getData(){
+
+        console.log (userInput);
         var newURL = apiUrl.split("tag=rock").join(userInput);
 
         var secondUrl = artistUrl.split("tag=rock").join(userInput);  
@@ -29,15 +42,16 @@ $(document).ready(function(){
         fetch(apiUrl)
             .then(function(response) {
                 return response.json();
+                //console.log(response.json());
             })
             .then (function (data){
-    
-                for (var i = 0; i < data.albums; i++) {
-                    let albumCardEl = document.createElement("div");
-                    let albumNameEl = document.createElement("p");
-                    let artistNameEl = document.createElement("p");
+                console.log(data);
+                for (var i = 0; i < data.albums.length; i++) {
+                    let albumCardEl = $('<div>');
+                    let albumNameEl = $("<p>");
+                    let artistNameEl = $("<p>");
                     // var albumCoverEl = $();
-                    let albumRank = $();
+                    // let albumRank = $();
 
                     albumCard.append(albumCardEl);
                     
@@ -53,11 +67,11 @@ $(document).ready(function(){
                     artistNameEl.text(data.albums.album[i].artist.name);
                     albumCardEl.append(artistNameEl);
                     
-                    console.lo
                     // in the documentation it shows a '#' before text, but this spits an error
                     // albumCoverEl.text(data.albums.album[i].image[1].#text);
                     // albumCardEl.append($('<img>', {id:'album-cover', src: data.albums.album[i].image[1].#text}));
                 };
+            });
 
                 fetch(artistUrl)
                 .then(function(response) {
@@ -65,49 +79,48 @@ $(document).ready(function(){
                 })
                 .then (function (data){
         
-                    for (var i = 0; i < data.albums; i++) {
-                        let artistCardEl = document.createElement("div");
-                        let artistNameEl = document.createElement("p");
+                    for (var i = 0; i < data.topartists.artist.length; i++) {
+                        let artistCardEl = $("<div>");
+                        let artistNameEl = $("<p>");
                         // var artistImageEl = $();
 
                         artistCard.append(artistCardEl);
                         
 
                         artistNameEl.text(data.topartists.artist[i].name);
-                        artistCardEl.append(albumNameEl);
+                        artistCardEl.append(artistName);
                         
                         // not sure how we want to do this part yet
                         // artistImageEl.text(data.topartists.artist[i].image[1].#text);
                         // artistCardEl.append($('<img>', {id:'artist-image', src: data.topartists.artist[i].image[1].#text}));
         
                     };
-    
+                });
+    };
+
+    function localStorage(){
+        
         // local storage functions, to store search history
-            var genreArr=[];
-            var storage=JSON.parse(localStorage.getItem("genreName"));
-            if(storage){
-                storage.push(userInput);
-                localStorage.setItem("genreName", JSON.stringify(storage));
-            } else{
-                genreArr.push(userInput);
-                localStorage.setItem("genreName", JSON.stringify(genreArr));
-            }
+        var genreArr=[];
+        var storage=JSON.parse(localStorage.getItem("genreName"));
+        if(storage){
+            storage.push(userInput);
+            localStorage.setItem("genreName", JSON.stringify(storage));
+        } else{
+            genreArr.push(userInput);
+            localStorage.setItem("genreName", JSON.stringify(genreArr));
+        }
+    
+    // puts as list under search history
+    var listGen=JSON.parse(localStorage.getItem("genreName"));
+    var list=$("#searchHis");
+    list.empty();
+    for(var i=0; i<listGen.length; i++){
+        var listItem= $('<li>');
+        listItem.text(listGen[i]);
+        list.append(listItem);
+    };  
+    }
         
-        // puts as list under search history
-        var listGen=JSON.parse(localStorage.getItem("genreName"));
-        var list=$("#searchHis");
-        list.empty();
-        for(var i=0; i<listGen.length; i++){
-            var listItem= $('<li>');
-            listItem.text(listGen[i]);
-            list.append(listItem);
-        };  
-     });
-        
-     });                                                                    
 
-    //     returnBtn.on("click", function(e){
-    //         e.preventDefault();
-    // });
-
-});
+    });
