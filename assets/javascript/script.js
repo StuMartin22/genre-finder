@@ -16,7 +16,7 @@ $(document).ready(function(){
     var searchBtn = $('#search-btn');
     var artistCard = $('#artist-card');
     var albumCard = $('#album-card');
-
+    var returnBtn = $('#return-btn');
     
     searchBtn.on("click", function(e) {
         e.preventDefault();
@@ -26,61 +26,8 @@ $(document).ready(function(){
 
         var secondUrl = artistUrl.split("tag=rock").join(userInput);  
         
-        fetch(apiUrl)
-            .then(function(response) {
-                return response.json();
-            })
-            .then (function (data){
-    
-                for (var i = 0; i < data.albums; i++) {
-                    let albumCardEl = document.createElement("div");
-                    let albumNameEl = document.createElement("p");
-                    let artistNameEl = document.createElement("p");
-                    // var albumCoverEl = $();
-                    let albumRank = $();
-
-                    albumCard.append(albumCardEl);
-                    
-                    // albumRank.text(data.albums.album[i].@attr.rank)
-
-                    console.log(data.albums.album[i].name);
-                    console.log(data.albums.album[i].artist.name);
-                    console.log(data.albums.album[i].image[1]["#text"]);
-    
-                    albumNameEl.text(data.albums.album[i].name);
-                    albumCardEl.append(albumNameEl);
-                    
-                    artistNameEl.text(data.albums.album[i].artist.name);
-                    albumCardEl.append(artistNameEl);
-                    
-                    console.lo
-                    // in the documentation it shows a '#' before text, but this spits an error
-                    // albumCoverEl.text(data.albums.album[i].image[1].#text);
-                    // albumCardEl.append($('<img>', {id:'album-cover', src: data.albums.album[i].image[1].#text}));
-                };
-
-                fetch(artistUrl)
-                .then(function(response) {
-                    return response.json();
-                })
-                .then (function (data){
-        
-                    for (var i = 0; i < data.albums; i++) {
-                        let artistCardEl = document.createElement("div");
-                        let artistNameEl = document.createElement("p");
-                        // var artistImageEl = $();
-
-                        artistCard.append(artistCardEl);
-                        
-
-                        artistNameEl.text(data.topartists.artist[i].name);
-                        artistCardEl.append(albumNameEl);
-                        
-                        // not sure how we want to do this part yet
-                        // artistImageEl.text(data.topartists.artist[i].image[1].#text);
-                        // artistCardEl.append($('<img>', {id:'artist-image', src: data.topartists.artist[i].image[1].#text}));
-        
-                    };
+        displayAlbums(newUrl);
+        displayArtists(secondUrl);
     
         // local storage functions, to store search history
             var genreArr=[];
@@ -104,10 +51,68 @@ $(document).ready(function(){
         };  
      });
         
-     });                                                                    
+     returnBtn.on("click", function(e){
+         e.preventDefault();
+ });
+                                                                  
 
-    //     returnBtn.on("click", function(e){
-    //         e.preventDefault();
-    // });
-
-});
+ function displayAlbums(url) {
+     fetch(url)
+         .then(function(response) {
+             return response.json();
+         })
+             .then (function (data){
+     
+                 for (var i = 0; i < data.albums.length; i++) {
+                     let albumCardEl = $("<div>");
+                     let albumNameEl = $("<p>");
+                     let artistNameEl = $("<p>");
+                     var albumCoverEl = $('<img');
+                     // let albumRank = $();
+ 
+                     albumCard.append(albumCardEl);
+                     
+                     // albumRank.text(data.albums.album[i].@attr.rank)
+ 
+                     console.log(data.albums.album[i].name);
+                     console.log(data.albums.album[i].artist.name);
+                     console.log(data.albums.album[i].image[1]["#text"]);
+     
+                     albumNameEl.text(data.albums.album[i].name);
+                     albumCardEl.append(albumNameEl);
+                     
+                     artistNameEl.text(data.albums.album[i].artist.name);
+                     albumCardEl.append(artistNameEl);
+                     
+                     albumCardEl.append(albumCoverEl, {id:'album-cover', src: data.albums.album[i].image[1]["#text"]});
+                 }
+             })
+         }
+ 
+        function displayArtists(url) {
+            fetch(url)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then (function (data){
+            
+                        for (var i = 0; i < data.topartists.artist.length; i++) {
+                            let artistCardEl = $("<div>");
+                            let artistNameEl = $("<p>");
+                            var artistImageEl = $('<img>');
+        
+                            artistCard.append(artistCardEl);
+                            
+        
+                            artistNameEl.text(data.topartists.artist[i].name);
+                            artistCardEl.append(artistNameEl);
+        
+                            artistCardEl.append(artistImageEl, {id:'artist-image', src: data.topartists.artist[i].image[1]["#text"]});
+            
+                        }
+                    })
+            }
+        function localStorage () {
+            
+        }
+        })
