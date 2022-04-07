@@ -6,6 +6,11 @@ $(document).ready(function () {
 
     getData(userInput)
 
+    // handle displaying the  time
+    var timeDisplayE1 = $('#time-display');
+    var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
+    timeDisplayE1.text(rightNow);
+
     function getData(userInput) {
 
         console.log(userInput);
