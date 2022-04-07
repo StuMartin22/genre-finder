@@ -87,5 +87,5 @@ $(document).ready(function () {
             var listItem= $('<li>');
             listItem.text(listGen[i]);
             list.append(listItem);
-        };  
+    };  
 })
