@@ -5,16 +5,6 @@ var {--black: #0F110C};
 var {--darkGray: #61707D};
 
 
-/* body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction : column;
-}; */
-
-/* main {
-    flex: 1 0 auto;
-} */
-
 header{
     font-size: 16px; 
 
