@@ -43,17 +43,18 @@
             </div>
         </div>
 
-        <div class="container center-align" id="artist-card">
+        <div class="container center-align">
             <div class="row center-align">
                 <div class="row">
                     <a target="_blank" href="{{Link}}">
                     <div class="col s12 m7">
-                      <div class="card">
+                      <div class="card" id="artist-card">
                         <div class="card-image">
                           <img>
                           <span class="card-title">Artists</span>
                         </div>
                         <div class="card-content">
+                          <p>Top Artists</p>
                         </div>
                         <div class="card-action">
                         </div>
@@ -66,12 +67,13 @@
                 <div class="row">
                     <a target="_blank" href="{{Link}}">
                     <div class="col s12 m7">
-                      <div class="card">
+                      <div class="card" id="album-card">
                         <div class="card-image">
                           <img src="images/sample-1.jpg">
                           <span class="card-title">Albums</span>
                         </div>
                         <div class="card-content">
+                          <p>Top Albums</p>
                         </div>
                         <div class="card-action">
                         </div>
@@ -84,6 +86,10 @@
             </div>
         </div>
     </div>
-    <script src="./assets/javascript/script.js"></script>
+    <ul class="collection with-header">
+        <li class="collection-header"><h4>Search History</h4></li>
+        <li id="searchHis"></li>
+      </ul>
+    <script src="./assets/javascript/results.js"></script>
 </body>
 </html>
