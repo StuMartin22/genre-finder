@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction : column;
+}; 
+
+leftcol {
+    flex: 1 0 auto;
+}
+
+rightcol {
+    flex: 1 0 auto;
+}
+
