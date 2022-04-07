@@ -1,13 +1,26 @@
-var {--darkRed: #7C0B2B};
-var {--lightRed: #FB4B4E};
-var {--lightGray: #D7D6D6};
-var {--black: #0F110C};
-var {--darkGray: #61707D};
+var {--darkRed: #7c0b2b};
+var {--lightRed: #fb4b4e};
+var {--lightGray: #d7d6d6};
+var {--black: #0f110c};
+var {--darkGray: #61707d};
 
 
 header{
     font-size: 16px; 
-
+    background-color: var(--lightRed);
+    color: var(--lightGray);
 }
 
+nav {
+    background-color: var(--darkRed);
+    color: var(--lightGray);
+}
 
+.nav-wrapper {
+    background-color: var(--lightRed);
+    color: var(--lightGray);
+}
+
+.brand-logo {
+    color: var(--lightGray);
+}
