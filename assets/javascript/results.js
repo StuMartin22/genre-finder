@@ -35,8 +35,9 @@ $(document).ready(function () {
                     let albumCardEl = $("<div>");
                     let albumNameEl = $("<p>");
                     let artistNameEl = $("<p>");
-                    //var albumCoverEl = $('<img');
+                    let albumCoverEl = $('<img>');
                     // let albumRank = $();
+
                     albumCard.append(albumCardEl);
                     //  albumRank.text(data.albums.album[i].@attr.rank)
 
@@ -45,8 +46,11 @@ $(document).ready(function () {
 
                      artistNameEl.text(data.albums.album[i].artist.name);
                      albumCardEl.append(artistNameEl);
-
-                     //albumCardEl.append(albumCoverEl, {id:'album-cover', src: data.albums.album[i].image[1]["#text"]});
+                    
+                     albumCoverEl.attr("src", data.albums.album[i].image[1]["#text"])
+                    albumCardEl.append(albumCoverEl);
+                    //  albumCoverEl.append(albumImage);
+                    //  albumCardEl.append(albumCoverEl);
                  }
             })
     }
@@ -65,24 +69,13 @@ $(document).ready(function () {
 
                     artistCard.append(artistCardEl);
 
+                    console.log(data);
 
                     artistNameEl.text(data.topartists.artist[i].name);
                     artistCardEl.append(artistNameEl);
 
-                    // var imageCard1 = $('<img>')
-
-                    artistCardEl.append(artistImageEl);
-                    // albumContainer.append(imageCard1)
-
-                    var imageLink = data.topartists.artist[i].image[1]["#text"];
-                    console.log(data);
-                    console.log(data.topartists.artist[0].image[1]["#text"]);
-                    // var imageNumber = data.whateverthepathwayis.here
-
-                    artistImageEl.append(imageLink);
-                    // var image[i] = "https://link" + imageNumber + "rest of link"
-
-                    //artistCardEl.append(artistImageEl, { id: 'artist-image', src: data.topartists.artist[i].image[1]["#text"] });
+                    // artistImageEl.attr("src", data.topartists.artist[i].image[1]["#text"])
+                    // artistCardEl.append(artistImageEl);
 
                 }
             })
