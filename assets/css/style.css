@@ -1,14 +1,19 @@
-var {--darkRed: #7c0b2b};
-var {--lightRed: #fb4b4e};
-var {--lightGray: #d7d6d6};
-var {--black: #0f110c};
-var {--darkGray: #61707d};
+:root{ 
+    --lightRed: #fb4b4e;
+    --darkRed: #7c0b2b;
+    --lightGray: #d7d6d6;
+    --black: #0f110c;
+    --darkGray: #61707d;
+    --middleGray: #a1b1ba;
+    --thisGray: #bac2ca;
+}
 
+body {
+    background-color: var(--lightGray);
+}
 
 header{
     font-size: 16px; 
-    background-color: var(--lightRed);
-    color: var(--lightGray);
 }
 
 nav {
@@ -17,10 +22,41 @@ nav {
 }
 
 .nav-wrapper {
-    background-color: var(--lightRed);
     color: var(--lightGray);
 }
 
 .brand-logo {
     color: var(--lightGray);
 }
+
+.card {
+    width: 50%;
+}
+
+#form{
+    background-color: var(--lightGray);
+    border-radius: 10px;
+    margin-top:10px;
+}
+
+#form-card {
+    background-color: var(--darkGray);
+    border-radius: 10px;
+    color: var(--lightGray);
+    font-size: 16px;
+    text-align: center;
+    top:25vh;
+}
+
+#search-btn {
+    background-color: var(--darkRed);
+    border-radius: 10px;
+}
+
+#form-center{
+    align-items: center;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
