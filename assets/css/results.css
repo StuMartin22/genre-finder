@@ -1,8 +1,24 @@
+:root{ 
+    --lightRed: #fb4b4e;
+    --darkRed: #7c0b2b;
+    --lightGray: #d7d6d6;
+    --black: #0f110c;
+    --darkGray: #61707d;
+    --middleGray: #a1b1ba;
+    --thisGray: #bac2ca;
+}
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction : column;
-}; 
+    background-color: var(--lightGray);
+} 
+
+nav {
+    background-color: var(--darkRed);
+    color: var(--lightGray);
+}
 
 leftcol {
     flex: 1 0 auto;
