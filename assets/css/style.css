@@ -20,10 +20,4 @@ header{
 
 }
 
-.search_bar input[type="text"]{
-    position: relative;
-    left: 20%;
-    top: 25%;
-    width: 30%;
 
-}
