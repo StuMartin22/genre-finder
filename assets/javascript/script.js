@@ -23,14 +23,9 @@ $(document).ready(function(){
     searchBtn.on("click", function(e) {
         e.preventDefault();
         window.location.href="./results.html";
-
         getData();
         localStorage();
-
-     });                                                                    
-
-    //     returnBtn.on("click", function(e){
-    //         e.preventDefault();
+     });                                                                
 
     function getData(){
 
