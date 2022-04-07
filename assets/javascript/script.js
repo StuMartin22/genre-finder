@@ -118,16 +118,17 @@ $(document).ready(function () {
       
         storage.push(userInput);
         localStorage.setItem("genreName", JSON.stringify(storage));
-       
-
-        //puts as list under search history
-        var listGen=JSON.parse(localStorage.getItem("genreName"));
-        var list=$("#searchHis");
-        list.empty();
-        for(var i=0; i<listGen.length; i++){
-            var listItem= $('<li>');
-            listItem.text(listGen[i]);
-            list.append(listItem);
-        };  
+         
     }
+
+    //puts as list under search history
+    var listGen=JSON.parse(localStorage.getItem("genreName"));
+    var list=$("#searchHis");
+    list.empty();
+    for(var i=0; i<listGen.length; i++){
+        var listItem= $('<li>');
+        listItem.text(listGen[i]);
+         list.append(listItem);
+    };
+
 })
