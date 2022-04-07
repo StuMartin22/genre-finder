@@ -56,7 +56,7 @@ $(document).ready(function () {
                 for (var i = 0; i < data.topartists.artist.length; i++) {
                     let artistCardEl = $("<div>");
                     let artistNameEl = $("<p>");
-                    var artistImageEl = $('<img>');
+                    let artistImageEl = $('<img>');
 
                     artistCard.append(artistCardEl);
 
@@ -65,10 +65,18 @@ $(document).ready(function () {
                     artistCardEl.append(artistNameEl);
 
                     // var imageCard1 = $('<img>')
+
+                    artistCardEl.append(artistImageEl);
                     // albumContainer.append(imageCard1)
 
+                    var imageLink = data.topartists.artist[i].image[1]["#text"];
+                    console.log(data);
+                    console.log(data.topartists.artist[0].image[1]["#text"]);
                     // var imageNumber = data.whateverthepathwayis.here
+
+                    artistImageEl.append(imageLink);
                     // var image[i] = "https://link" + imageNumber + "rest of link"
+
                     //artistCardEl.append(artistImageEl, { id: 'artist-image', src: data.topartists.artist[i].image[1]["#text"] });
 
                 }
