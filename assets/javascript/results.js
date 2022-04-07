@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     function getData(userInput) {
 
-        console.log(userInput);
+        // console.log(userInput);
         //var newURL = apiUrl.split("tag=rock").join(userInput);
         var apiUrl = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=" + userInput + "&limit=10&api_key=38f325c730f4218c2247c79ff7fd0a85&format=json";
         var artistUrl = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=" + userInput + "&limit=10&api_key=38f325c730f4218c2247c79ff7fd0a85&format=json";
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
                     artistCard.append(artistCardEl);
 
-                    console.log(data);
+                    // console.log(data);
 
                     artistNameEl.text(data.topartists.artist[i].name);
                     artistCardEl.append(artistNameEl);

@@ -26,6 +26,7 @@ GenreFinderImage3
 GenreFinderGIF1
 
 GenreFinderGif2
+
 ---
 
 <h1 align="center">Functionality</h1>
@@ -44,17 +45,15 @@ Contributions are not currently accepted as production of application is on hiat
 
 <p align="center"><a href="https://stumartin22.github.io/genre-finder/">https://stumartin22.github.io/genre-finder/</a></p>
 
-<br>
+<h2 align="center">Github Repo for Genre-Finder</h2>
+<p align="center"><a href="https://github.com/StuMartin22/genre-finder">https://github.com/StuMartin22/genre-finder</a></p>
 
 ---
 
 <h1 align="center">Link to Author Githubs</h1>
 
-<br>
 
 <h2 align="center">Project Manager:</h2>
-
----
 
 <p align="center">Stuart Martin</p>
 <p align="center"><a href="https://github.com/StuMartin22">https://github.com/StuMartin22</a></p>
@@ -62,8 +61,6 @@ Contributions are not currently accepted as production of application is on hiat
 <br>
 
 <h2 align="center">Collaborators / Co-authors</h2>
-
----
 
 <p align="center">Hannah Lodge</p>
 <p align="center"><a href="https://github.com/StuMartin22">https://github.com/hlodg</a></p>
