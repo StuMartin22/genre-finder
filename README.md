@@ -11,21 +11,21 @@
 
 <h1 align="center">About This Application</h1>
 
-This application was designed to allow the user to find new music in a particular genre that they are a fan of. The application has a drop down selection box where users can select a genre they'd like to search and then the application will display the top 10 albums and artists from that genre on a new page. The search history will be stored on the second page so users can click on a previously searched genre and see those results again!
+This application was designed to allow the user to find new music in a particular genre that they are a fan of. The application has a drop down selection box where users can select a genre they'd like to search and then the application will display the top 10 albums and artists from that genre on a new page. The search history will be stored on the second page so users can see what they've previously searched for!
 
 ---
 
-<h1 align="center">Screen Captures and GIFs</h1>
+<h1 align="center">Screen Captures and Images</h1>
 
-![Image of genre-finder application. Contains a drop box that when clicked will present a selection of pre-defined genres. A submit button is next to the dropdown box.]( assets/images/WeatherAppImage.png "GenreFinderImage")
+![Image of genre-finder application. Image of main page. Shows center module with drop down options stating ' choose your option.' The current date and time is displayed on the top right.]( ./assets/images/main%20page.png "GenreFinderMain")
 
-GenreFinderImage2
+![Image of genre-finder application. Contains a drop box that when clicked will present a selection of pre-defined genres that highlight when you mouseover them. A submit button is next to the dropdown box.]( ./assets/images/dropdown.png "GenreFinderDropdown")
 
-GenreFinderImage3
+![Image of genre-finder application. A box that says 'Suggestions: Here are some suggestions based on your chosen genre. A column on the left holds top artists from the genre while a column on the right holds top albums and displays the artist of the album, the name of the album, and an album cover image.]( ./assets/images/suggestions.png "GenreFinderSuggestions")
 
-GenreFinderGIF1
+![Image of genre-finder application. A navigation bar runs across the bottom of the screen that says ' Search History' underneath is a list of stored search results.]( ./assets/images/Search%20History.png "GenreFinderHistory")
 
-GenreFinderGif2
+<p align="center"><a href="https://watch.screencastify.com/v/G90orRjurosh3jzEasXM">Mockup Video</a></p>
 
 ---
 
@@ -47,10 +47,6 @@ Contributions are not currently accepted as production of application is on hiat
 
 <h2 align="center">Github Repo for Genre-Finder</h2>
 <p align="center"><a href="https://github.com/StuMartin22/genre-finder">https://github.com/StuMartin22/genre-finder</a></p>
-
-
-<p align="center">Mockup</p>
-https://watch.screencastify.com/v/G90orRjurosh3jzEasXM 
 
 ---
 
