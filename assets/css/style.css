@@ -17,7 +17,7 @@ header{
 }
 
 nav {
-    background-color: var(--darkRed);
+    background-image: linear-gradient(to bottom right, var(--darkRed), var(--lightRed));
     color: var(--lightGray);
 }
 
