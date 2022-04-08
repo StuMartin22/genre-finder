@@ -10,6 +10,7 @@
 
 body {
     background-color: var(--lightGray);
+    font-family: 'Anek Tamil', sans-serif;
 }
 
 header{
@@ -51,6 +52,7 @@ nav {
 #search-btn {
     background-color: var(--darkRed);
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 #form-center{

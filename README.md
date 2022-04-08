@@ -48,6 +48,10 @@ Contributions are not currently accepted as production of application is on hiat
 <h2 align="center">Github Repo for Genre-Finder</h2>
 <p align="center"><a href="https://github.com/StuMartin22/genre-finder">https://github.com/StuMartin22/genre-finder</a></p>
 
+
+<p align="center">Mockup</p>
+https://watch.screencastify.com/v/G90orRjurosh3jzEasXM 
+
 ---
 
 <h1 align="center">Link to Author Githubs</h1>
