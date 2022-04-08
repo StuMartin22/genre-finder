@@ -16,15 +16,78 @@ body {
 } 
 
 nav {
-    background-color: var(--darkRed);
     color: var(--lightGray);
 }
 
-leftcol {
-    flex: 1 0 auto;
+#top-nav {
+    background-image: linear-gradient(to bottom right, var(--darkRed), var(--lightRed));
 }
 
-rightcol {
-    flex: 1 0 auto;
+#bottom-nav {
+    background-image: linear-gradient(to bottom right, var(--lightRed), var(--darkRed));
 }
 
+.nav-wrapper {
+    color: var(--lightGray);
+}
+
+#return-btn {
+    background-color: var(--darkGray);
+    color: var(--lightGray);
+}
+
+ #album-card {
+    font-size:2.5vh;
+    border-radius: 10px;
+    background-color: var(--darkGray);
+    color: var(--lightGray);
+}
+
+#album-card>div>p{
+    font-size: 3vh;
+}
+
+#artist-card>div>p{
+    font-size: 3vh;
+}
+
+#artist-card {
+    font-size:2.5vh;
+    border-radius: 10px;
+    background-color: var(--darkGray);
+    color: var(--lightGray);
+}
+
+
+
+#suggestions {
+    background-color: var(--darkGray);
+    color: var(--lightGray);
+}
+
+.column {
+    /* color: var(--lightGray); */
+    font-size: 5vh;
+}
+
+#sugg-box {
+    font-size: 5vh;
+}
+
+.logo {
+    font-size: 5vh;
+    color: var(--lightGray);
+}
+
+.time {
+    color: var(--lightGray);
+}
+
+#sugg-p {
+    font-size:2.5vh;
+}
+
+#search-history  {
+    background-image: linear-gradient(to bottom right, var(--darkRed), var(--lightRed));
+    color: var(--lightGray);
+}
