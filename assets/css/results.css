@@ -20,11 +20,4 @@ nav {
     color: var(--lightGray);
 }
 
-leftcol {
-    flex: 1 0 auto;
-}
-
-rightcol {
-    flex: 1 0 auto;
-}
 
